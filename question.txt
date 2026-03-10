@@ -1,0 +1,200 @@
+ID: 1 
+Question: Which Linux command is used to change the current directory? 
+Options: 
+A. pwd 
+B. cd  
+C. ls 
+D. mv 
+Answer: B 
+Difficulty: Easy 
+
+ID: 2 
+Question:  Which command displays the current working directory in Linux? 
+Options: 
+A. pwd 
+B. whoami 
+C. dir 
+D. where 
+Answer: A 
+Difficulty: Easy 
+
+ID: 3 
+Question: What does the /etc/passwd file store in Linux? 
+Options: 
+A. System passwords 
+B. User account information 
+C. Installed packages 
+D. Kernel logs 
+Answer: B 
+Difficulty: Medium 
+
+ID: 4 
+Question: Which command shows the path of a command executable in Linux? 
+Options: 
+A. whereis 
+B. locate 
+C. which 
+D. find 
+Answer: C 
+Difficulty: Hard 
+
+ID: 5 
+Question:  Which command lists files and directories in Linux? 
+Options: 
+A. show 
+B. list 
+C. ls 
+D. dir 
+Answer: C 
+Difficulty: Easy 
+
+ID: 6 
+Question: Which command is used to create a new directory in Linux? 
+Options: 
+A. newdir 
+B. createdir 
+C. mkdir 
+D. makedir 
+Answer: C 
+Difficulty: Easy 
+
+ID: 7 
+Question: What does the sudo command do in Linux? 
+Options: 
+A. Switch user directory 
+B. Run commands with superuser priviliges 
+C. Shut down the system 
+D. Show disk usage 
+Answer: B 
+Difficulty: Medium 
+
+ID: 8 
+Question: What Git command is used to download changes from a remote repository and merge them into the current branch? 
+Options: 
+A. git fetch 
+B. git pull 
+C. git merge 
+D. git clone 
+Answer: B 
+Difficulty: Hard 
+
+ID: 9 
+Question: Which Linux command removes a file? 
+Options: 
+A. delete 
+B. rm 
+C. erase 
+D. removefile 
+Answer: B 
+Difficulty: Easy 
+
+ID: 10 
+Question: Which Git command initializes a new repository? 
+Options: 
+A. git create 
+B. git init 
+C. git start 
+D. git new 
+Answer: B 
+Difficulty: Easy 
+
+ID: 11 
+Question: Which command installs packages on Ubuntu or Debian systems? 
+Options: 
+A. yum install 
+B. rpm install 
+C. pacman install 
+D. apt install 
+Answer: D 
+Difficulty: Medium 
+
+ID: 12 
+Question: Which command is used to change file permissions in Linux? 
+Options: 
+A. chmod 
+B. chown 
+C. perm 
+D. access 
+Answer: A 
+Difficulty: Hard 
+
+ID: 13 
+Question: Which Git command checks the status of files in a repository? 
+Options: 
+A. git check 
+B. git status 
+C. git info 
+D. git state 
+Answer: B 
+Difficulty: Easy 
+
+ID: 14 
+Question: What is the default branch name in a new Git repository? 
+Options: 
+A. main 
+B. master 
+C. default 
+D. origin 
+Answer: A 
+Difficulty: Easy 
+
+ID: 15 
+Question:  Which Python function prints output to the screen? 
+Options: 
+A. show() 
+B. display() 
+C. print 
+D. echo() 
+Answer: C 
+Difficulty: Easy 
+
+ID: 16 
+Question: What is a Git merge conflict? 
+Options: 
+A. When Git deletes files automatically 
+B. When two branches modify the same part of a file 
+C. When GitHub server is down 
+D. When Git cannot find a repository 
+Answer: B 
+Difficulty: Medium 
+
+ID: 17 
+Question: Which Python data structure stores key-value pairs? 
+Options: 
+A. List 
+B. Tuple 
+C. Dictionary 
+D. Set 
+Answer: C 
+Difficulty: Hard 
+
+ID: 18 
+Question: Which Python keyword is used to define a function? 
+Options: 
+A. define 
+B. function 
+C. def 
+D. func 
+Answer: C 
+Difficulty: Easy 
+
+ID: 19 
+Question: Which Python function returns the number of items in a list? 
+Options: 
+A. size() 
+B. length() 
+C. count() 
+D. len() 
+Answer: D 
+Difficulty: Medium 
+
+ID: 20 
+Question: What command clones a GitHub repository to your local machine? 
+Options: 
+A. git download 
+B. git copy 
+C. git fork 
+D. git clone 
+Answer: D 
+Difficulty: Hard 
+
