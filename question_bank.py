@@ -162,40 +162,49 @@ questions = [
     }
 ]
 
-#Function for Saving Questions to questions.txt file
+# Function for Saving Questions to questions.txt file
 
 def save_questions(questions):
-    with open ("question.txt", "w") as file:
-        for question in questions:
-            file.write(f"ID: {question['id']} \n")
-            file.write(f"Question: {question['question']} \n")
-            file.write(f"Options: \n")
-            for option in question['options']:
-                file.write(f"{option} \n")
-            file.write(f"Answer: {question['answer']} \n")
-            file.write(f"Difficulty: {question['difficulty']} \n")
-            file.write("\n")
+    try:
+        with open("question.txt", "w") as file:
+            for question in questions:
+                file.write(f"ID: {question['id']} \n")
+                file.write(f"Question: {question['question']} \n")
+                file.write(f"Options: \n")
+                for option in question['options']:
+                    file.write(f"{option} \n")
+                file.write(f"Answer: {question['answer']} \n")
+                file.write(f"Difficulty: {question['difficulty']} \n")
+                file.write("\n")
+    except Exception as e:
+        print("Error saving questions:", e)
 
-#Function for loading questions from questions.txt file
+# Function for loading questions from questions.txt file
 
 def load_questions():
     questions = []
-    with open("question.txt", "r") as file:
-        lines = file.readlines()
+    try:
+        with open("question.txt", "r") as file:
+            lines = file.readlines()
         # print(lines)
-        for i in range(0, len(lines), 10):
-            question = {
-                "id": int(lines[i].split(": ")[1].strip()),
-                "question": lines[i + 1].split(": ")[1].strip(),
-                "options": [lines[i + 3].strip(), lines[i + 4].strip(), lines[i + 5].strip(), lines[i + 6].strip()],
-                "answer": lines[i + 7].split(": ")[1].strip(),
-                "difficulty": lines[i + 8].split(": ")[1].strip()
-            }
-            questions.append(question)
-    
+            for i in range(0, len(lines), 10):
+                question = {
+                    "id": int(lines[i].split(": ")[1].strip()),
+                    "question": lines[i + 1].split(": ")[1].strip(),
+                    "options": [lines[i + 3].strip(), lines[i + 4].strip(), lines[i + 5].strip(), lines[i + 6].strip()],
+                    "answer": lines[i + 7].split(": ")[1].strip(),
+                    "difficulty": lines[i + 8].split(": ")[1].strip()
+               }
+                questions.append(question)
+    except FileNotFoundError:
+        print("Question file not found.")
+    except Exception as e:
+        print("Error loading questions:", e)
+
     return questions
 
-#Function to add new question
+# Function to add new question
+
 def add_question(questions):
     new_id = len(questions) + 1
     question_text = input("Enter the question: ")
@@ -213,15 +222,16 @@ def add_question(questions):
         "answer": answer,
         "difficulty": difficulty
     }
-    
+
     questions.append(new_question)
     save_questions(questions)
     print("New question added successfully!")
 
-#Function for difficulty filtering
+# Function for difficulty filtering
 
 def filter_questions_by_difficulty(questions, difficulty):
-    filtered_questions = [question for question in questions if question['difficulty'].lower() == difficulty.lower()]
+    filtered_questions = [
+        question for question in questions if question['difficulty'].lower() == difficulty.lower()]
     return filtered_questions
 
 save_questions(questions)
@@ -231,15 +241,21 @@ print(loaded_questions)
 
 add_question(questions)
 
-questions = load_questions()
-difficulty= input("Enter difficulty (Easy, Medium, Hard): ")
-filtered_questions = filter_questions_by_difficulty(questions, difficulty)
-for question in filtered_questions:
-    print(f"ID: {question['id']}")
-    print(f"Question: {question['question']}")
-    print("Options:")
-    for option in question['options']:
-        print(option)
-    print(f"Answer: {question['answer']}")
-    print(f"Difficulty: {question['difficulty']}")
-    print()
+
+try:
+    questions = load_questions()
+    difficulty = input("Enter difficulty (Easy, Medium, Hard): ")
+    filtered_questions = filter_questions_by_difficulty(questions, difficulty)
+
+    for question in filtered_questions:
+        print(f"ID: {question['id']}")
+        print(f"Question: {question['question']}")
+        print("Options:")
+        for option in question['options']:
+            print(option)
+        print(f"Answer: {question['answer']}")
+        print(f"Difficulty: {question['difficulty']}")
+        print()
+
+except Exception as e:
+    print("An error occurred:", e)

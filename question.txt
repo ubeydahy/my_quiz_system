@@ -198,13 +198,3 @@ D. git clone
 Answer: D 
 Difficulty: Hard 
 
-ID: 21 
-Question: What does the mv command do? 
-Options: 
-deletes a file or folder 
-renames a file orfolder 
-changes location of a folder 
-moves a file or a folder 
-Answer: d 
-Difficulty: Easy 
-
