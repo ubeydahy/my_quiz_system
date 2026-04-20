@@ -166,7 +166,7 @@ questions = [
 
 def save_questions(questions):
     try:
-        with open("question.txt", "w") as file:
+        with open("questions.txt", "w") as file:
             for question in questions:
                 file.write(f"ID: {question['id']} \n")
                 file.write(f"Question: {question['question']} \n")
@@ -184,7 +184,7 @@ def save_questions(questions):
 def load_questions():
     questions = []
     try:
-        with open("question.txt", "r") as file:
+        with open("questions.txt", "r") as file:
             lines = file.readlines()
         # print(lines)
             for i in range(0, len(lines), 10):
@@ -203,29 +203,47 @@ def load_questions():
 
     return questions
 
-# Function to add new question
+# Function to add new question (API for adding new question to the question bank)
 
-def add_question(questions):
+def add_question(questions, new_question):
     new_id = len(questions) + 1
-    question_text = input("Enter the question: ")
-    options = []
-    for i in range(4):
-        option = input(f"Enter option {i + 1}: ")
-        options.append(option)
-    answer = input("Enter the correct answer (A, B, C, or D): ")
-    difficulty = input("Enter the difficulty level (Easy, Medium, Hard): ")
-
-    new_question = {
+    
+    question = {
         "id": new_id,
-        "question": question_text,
-        "options": options,
-        "answer": answer,
-        "difficulty": difficulty
+        "question": new_question["question"],
+        "options": new_question["options"],
+        "answer": new_question["answer"],
+        "difficulty": new_question["difficulty"]
     }
 
-    questions.append(new_question)
+    questions.append(question)
     save_questions(questions)
-    print("New question added successfully!")
+
+    return question
+    
+# Function to add new question
+
+# def add_question(questions):
+    # new_id = len(questions) + 1
+    # question_text = input("Enter the question: ")
+    # options = []
+    # for i in range(4):
+    #     option = input(f"Enter option {i + 1}: ")
+    #     options.append(option)
+    # answer = input("Enter the correct answer (A, B, C, or D): ")
+    # difficulty = input("Enter the difficulty level (Easy, Medium, Hard): ")
+
+    # new_question = {
+    #     "id": new_id,
+    #     "question": question_text,
+    #     "options": options,
+    #     "answer": answer,
+    #     "difficulty": difficulty
+    # }
+
+    # questions.append(new_question)
+    # save_questions(questions)
+    # print("New question added successfully!")
 
 # Function for difficulty filtering
 
@@ -234,28 +252,28 @@ def filter_questions_by_difficulty(questions, difficulty):
         question for question in questions if question['difficulty'].lower() == difficulty.lower()]
     return filtered_questions
 
-save_questions(questions)
+# save_questions(questions)
 
-loaded_questions = load_questions()
-print(loaded_questions)
+# loaded_questions = load_questions()
+# print(loaded_questions)
 
-add_question(questions)
+# add_question(questions)
 
 
-try:
-    questions = load_questions()
-    difficulty = input("Enter difficulty (Easy, Medium, Hard): ")
-    filtered_questions = filter_questions_by_difficulty(questions, difficulty)
+# try:
+#     questions = load_questions()
+#     difficulty = input("Enter difficulty (Easy, Medium, Hard): ")
+#     filtered_questions = filter_questions_by_difficulty(questions, difficulty)
 
-    for question in filtered_questions:
-        print(f"ID: {question['id']}")
-        print(f"Question: {question['question']}")
-        print("Options:")
-        for option in question['options']:
-            print(option)
-        print(f"Answer: {question['answer']}")
-        print(f"Difficulty: {question['difficulty']}")
-        print()
+#     for question in filtered_questions:
+#         print(f"ID: {question['id']}")
+#         print(f"Question: {question['question']}")
+#         print("Options:")
+#         for option in question['options']:
+#             print(option)
+#         print(f"Answer: {question['answer']}")
+#         print(f"Difficulty: {question['difficulty']}")
+#         print()
 
-except Exception as e:
-    print("An error occurred:", e)
+# except Exception as e:
+#     print("An error occurred:", e)
